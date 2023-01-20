@@ -1,11 +1,20 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import React, { Fragment } from "react";
+import NavBar from "./starter/navbar/NavBar";
 import Footer from "./starter/footer/Footer";
+import Main from "./pages/home/Main";
+import Login from "./pages/login/Login";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
     <Fragment>
-      <h1>Hello World</h1>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
       <Footer />
     </Fragment>
   );
