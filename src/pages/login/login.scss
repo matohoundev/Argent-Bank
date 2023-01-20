@@ -5,6 +5,9 @@
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
+  @media (max-width: 720px) {
+    height: 500px;
+  }
 }
 
 .sign-in-icon {
