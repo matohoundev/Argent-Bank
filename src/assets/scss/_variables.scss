@@ -1,0 +1,63 @@
+// Size Police
+
+$text-xsss: 0.625rem; // 10px
+$text-xss: 0.75rem; // 12px
+$text-xs: 0.812rem; // 13px
+$text-sm: 0.938rem; // 15px
+$text-lg: 1.125rem; // 18px
+$text-2xl: 1.5rem; // 24px
+$text-4xl: 2.25rem; // 36px
+$text-5xl: 3rem; // 48px
+$text-8xl: 6rem; // 96px
+$text-18xl: 14rem; // 288px
+
+//line height
+
+$line-height-sm: 1.25rem;
+$line-height-lg: 1.75rem;
+$line-height-2xl: 2rem;
+$line-height-4xl: 2.5rem;
+$line-height-max: 1;
+
+// Color Base
+
+$main-color: #020203;
+$color-primary: #ff0101;
+$color-dark: #282d30;
+$color-darken: #20253a;
+$text-black: #000000;
+$text-white: #ffffff;
+$text-gray: #fbfbfb;
+$color-gray: #74798c;
+$color-red: #e60000;
+$color-light-red: #ff0000;
+$transparent: transparent;
+
+// border radius
+
+$radius: 5px;
+$rounded: 10px;
+$rounded-3xl: 25px;
+
+// width
+
+$w-full: 100%;
+$w-lg: 80%;
+$w-md: 50%;
+$w-screen: 100vw;
+$w-min: min-content;
+$w-max: max-content;
+$w-fit: fit-content;
+
+$w-28: 7.187rem;
+
+// height
+
+$h-full: 100%;
+$h-md: 50%;
+$h-screen: 100vh;
+$h-min: min-content;
+$h-max: max-content;
+$h-fit: fit-content;
+
+$h-6: 1.562rem;

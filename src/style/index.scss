@@ -1,0 +1,383 @@
+// SCSS import
+@import "../assets/scss/variables";
+// starter-kit
+@import "../starter/navbar/navbar";
+@import "../starter/footer/footer";
+// pages-kit
+@import "../pages/home/main";
+@import "../pages/login/login";
+@import "../pages/profile/profile";
+// @import "../pages/404/notFound";
+// components-kit
+// @import "../components/card/card";
+// @import "../components/banner/banner";
+// @import "../components/graph/activity/graphActivity.scss";
+// @import "../components/graph/averageSession/graphSession.scss";
+// @import "../components/graph/performance/graphPerformance.scss";
+// @import "../components/graph/score/graphScore.scss";
+
+/* reset */
+
+// html {
+//   height: 100%;
+// }
+
+#root {
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
+}
+
+ul {
+  list-style: none;
+}
+
+// Size page settings
+
+// width
+
+.w-full {
+  width: $w-full;
+}
+
+.w-lg {
+  width: $w-lg;
+}
+
+.w-md {
+  width: $w-md;
+}
+
+.w-screen {
+  width: $w-screen;
+}
+
+// height
+
+.h-full {
+  height: $h-full;
+}
+
+.h-screen {
+  height: $h-screen;
+}
+
+.h-md {
+  height: $h-md;
+}
+
+// font weight
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+// font size
+
+.text-xsss {
+  font-size: $text-xsss;
+  line-height: $line-height-max;
+}
+
+.text-xss {
+  font-size: $text-xss;
+  line-height: $line-height-max;
+}
+
+.text-xs {
+  font-size: $text-xs;
+  line-height: $line-height-max;
+}
+
+.text-sm {
+  font-size: $text-sm;
+  line-height: $line-height-sm;
+  font-weight: 500;
+}
+
+.text-lg {
+  font-size: $text-lg;
+  line-height: $line-height-lg;
+}
+
+.text-2xl {
+  font-size: $text-2xl;
+  line-height: $line-height-2xl;
+}
+
+.text-4xl {
+  font-size: $text-4xl;
+  line-height: $line-height-4xl;
+}
+
+.text-5xl {
+  font-size: $text-5xl;
+  line-height: $line-height-max;
+}
+
+.text-8xl {
+  font-size: $text-8xl;
+  line-height: $line-height-max;
+}
+
+.text-18xl {
+  font-size: $text-18xl;
+  line-height: $line-height-max;
+}
+
+// color
+
+.main-color {
+  color: $main-color;
+}
+
+.color-primary {
+  color: $color-primary;
+}
+
+.text-black {
+  color: $text-black;
+}
+
+.text-dark {
+  color: $color-dark;
+}
+
+.text-darken {
+  color: $color-darken;
+}
+.text-white {
+  color: $text-white;
+}
+
+.text-gray {
+  color: $text-gray;
+}
+
+.color-gray {
+  color: $color-gray;
+}
+
+.transparent {
+  color: $transparent;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-dark {
+  background-color: #12002b;
+}
+
+.bg-gray {
+  background-color: #d1d5db;
+}
+
+// input
+
+.input-remember {
+  display: flex;
+}
+
+.input-remember label {
+  margin-left: 0.25rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper label {
+  font-weight: bold;
+}
+
+.input-wrapper input {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+// button
+
+.sign-in-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+}
+
+.edit-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.edit-input {
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 1px solid rgb(133, 142, 156);
+  border-radius: 5px;
+}
+
+.transaction-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  @media (min-width: 720px) {
+    width: 200px;
+  }
+}
+
+// border radius
+
+.rounded-light {
+  border-radius: $radius;
+}
+
+.rounded {
+  border-radius: $rounded;
+}
+
+.rounded-3xl {
+  border-radius: $rounded-3xl;
+}
+
+// flex
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// grid
+
+.grid {
+  display: grid;
+}
+
+// column //
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-row-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+// row //
+
+.grid-row-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.grid-row-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.hidden {
+  display: none;
+}
+
+// delete decoration
+
+.no-underline {
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+// cursor pointer
+
+.pointer {
+  cursor: pointer;
+}
