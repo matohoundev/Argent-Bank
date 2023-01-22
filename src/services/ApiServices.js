@@ -16,4 +16,20 @@ export default class ApiServices {
       throw new Error(error.response.data.message || error.message);
     }
   }
+
+  async getProfileData() {
+    const token = localStorage.getItem("token");
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await axios
+      .post(`${this.url}user/profile`, {}, config)
+      .then((res) => res.data)
+      .catch((error) => {
+        throw error;
+      });
+  }
 }

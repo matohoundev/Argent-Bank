@@ -2,16 +2,30 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import ApiServices from "../../services/ApiServices";
+import { setUser } from "../../redux/actions/profileActions";
+
+const api = new ApiServices();
 
 const Profile = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (!user) {
+    if (!user && !localStorage.getItem("token")) {
       navigate("/login");
     }
   }, [user, navigate]);
+
+  useEffect(() => {
+    const getProfile = async () => {
+      const res = await api.getProfileData();
+      await dispatch(setUser(res.body));
+    };
+    getProfile();
+  }, []);
 
   return (
     <main className="main bg-gray">

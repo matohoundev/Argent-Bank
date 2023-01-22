@@ -12,6 +12,7 @@ const NavBar = () => {
 
   const logout = () => {
     dispatch(signOut());
+    localStorage.removeItem("token");
     navigate("/");
   };
 
