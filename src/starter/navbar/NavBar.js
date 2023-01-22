@@ -7,7 +7,7 @@ import logo from "../../assets/logo/argentBankLogo.png";
 import { unsetUser } from "../../redux/actions/profileActions";
 
 const NavBar = () => {
-  const user = useSelector((state) => state.auth.user);
+  const token = localStorage.getItem("token");
   const profile = useSelector((state) => state.profile);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,12 +32,12 @@ const NavBar = () => {
       <div>
         <Link
           className="main-nav-item"
-          to={user && profile ? "/profile" : "/login"}
+          to={token && profile ? "/profile" : "/login"}
         >
           <i className="fa fa-user-circle"></i>
           {profile.firstName ? profile.firstName : "Sign In"}
         </Link>
-        {user && profile && (
+        {token && profile && (
           <Link className="main-nav-item" to="/" onClick={() => logout()}>
             <i className="fa fa-sign-out"></i>
             Sign Out

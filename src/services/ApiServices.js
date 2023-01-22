@@ -11,7 +11,7 @@ export default class ApiServices {
         email,
         password,
       });
-      const token = res.data.token;
+      const token = res.data.body.token;
       localStorage.setItem("token", token);
       return res.data;
     } catch (error) {
