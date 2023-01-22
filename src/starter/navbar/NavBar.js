@@ -8,7 +8,7 @@ import { unsetUser } from "../../redux/actions/profileActions";
 
 const NavBar = () => {
   const user = useSelector((state) => state.auth.user);
-  const { firstName } = useSelector((state) => state.profile);
+  const profile = useSelector((state) => state.profile);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -30,11 +30,14 @@ const NavBar = () => {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       <div>
-        <Link className="main-nav-item" to="/login">
+        <Link
+          className="main-nav-item"
+          to={user && profile ? "/profile" : "/login"}
+        >
           <i className="fa fa-user-circle"></i>
-          {firstName ? firstName : "Sign In"}
+          {profile.firstName ? profile.firstName : "Sign In"}
         </Link>
-        {user && (
+        {user && profile && (
           <Link className="main-nav-item" to="/" onClick={() => logout()}>
             <i className="fa fa-sign-out"></i>
             Sign Out

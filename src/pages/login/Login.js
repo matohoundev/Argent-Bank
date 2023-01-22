@@ -20,8 +20,7 @@ const Login = () => {
     setError(null);
     try {
       const data = await api.login(email, password);
-      await dispatch(signIn(data));
-      localStorage.setItem("token", data.body.token);
+      dispatch(signIn(data));
       navigate("/profile");
     } catch (error) {
       setError(error.message);

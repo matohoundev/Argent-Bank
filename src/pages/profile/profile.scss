@@ -10,6 +10,17 @@
     font-weight: light;
     margin: 0;
   }
+  .box-edit {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    &--input {
+      margin-bottom: 20px;
+    }
+    &--button {
+      margin-left: 12px;
+    }
+  }
 }
 
 .box-account {
