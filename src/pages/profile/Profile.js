@@ -12,6 +12,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+  const { firstName, lastName } = useSelector((state) => state.profile);
 
   useEffect(() => {
     if (!user && !localStorage.getItem("token")) {
@@ -22,10 +23,10 @@ const Profile = () => {
   useEffect(() => {
     const getProfile = async () => {
       const res = await api.getProfileData();
-      await dispatch(setUser(res.body));
+      dispatch(setUser(res.body));
     };
     getProfile();
-  }, []);
+  }, [dispatch]);
 
   return (
     <main className="main bg-gray">
@@ -33,7 +34,9 @@ const Profile = () => {
         <h1 className="text-black">
           Welcome back
           <br />
-          <span className="header-name">Tony Jarvis!</span>
+          <span className="header-name">
+            {firstName} {lastName}!
+          </span>
         </h1>
         <button className="edit-button">Edit Name</button>
       </div>

@@ -4,3 +4,10 @@ export const setUser = (data) => {
     payload: data,
   };
 };
+
+export const unsetUser = (data) => {
+  return {
+    type: "UNSET_USER",
+    payload: data,
+  };
+};

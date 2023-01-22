@@ -19,6 +19,16 @@ const profileReducer = (state = initialState, action) => {
         updatedAt: action.payload.updatedAt,
         id: action.payload.id,
       };
+    case "UNSET_USER":
+      return {
+        ...state,
+        email: "",
+        firstName: "",
+        lastName: "",
+        createdAt: "",
+        updatedAt: "",
+        id: "",
+      };
     default:
       return state;
   }

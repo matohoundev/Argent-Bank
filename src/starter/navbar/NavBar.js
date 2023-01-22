@@ -4,14 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "../../redux/actions/authActions";
 import logo from "../../assets/logo/argentBankLogo.png";
+import { unsetUser } from "../../redux/actions/profileActions";
 
 const NavBar = () => {
   const user = useSelector((state) => state.auth.user);
+  const { firstName } = useSelector((state) => state.profile);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logout = () => {
     dispatch(signOut());
+    dispatch(unsetUser());
     localStorage.removeItem("token");
     navigate("/");
   };
@@ -29,7 +32,7 @@ const NavBar = () => {
       <div>
         <Link className="main-nav-item" to="/login">
           <i className="fa fa-user-circle"></i>
-          Sign In
+          {firstName ? firstName : "Sign In"}
         </Link>
         {user && (
           <Link className="main-nav-item" to="/" onClick={() => logout()}>
