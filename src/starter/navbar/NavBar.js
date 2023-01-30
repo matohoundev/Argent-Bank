@@ -17,11 +17,13 @@ const NavBar = () => {
 
   useEffect(() => {
     const getProfile = async () => {
-      const data = await api.getProfileData();
-      dispatch(setUser(data.body));
+      if (token) {
+        const data = await api.getProfileData();
+        dispatch(setUser(data.body));
+      }
     };
     getProfile();
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   const logout = () => {
     dispatch(signOut());
