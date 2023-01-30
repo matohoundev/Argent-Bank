@@ -17,7 +17,7 @@ const Profile = () => {
   const [newlastName, setNewlastName] = useState("");
 
   useEffect(() => {
-    if (!user && !localStorage.getItem("token")) {
+    if (!localStorage.getItem("token")) {
       navigate("/login");
     }
   }, [user, navigate]);

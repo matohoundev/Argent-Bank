@@ -5,10 +5,9 @@ export const setUser = (data) => {
   };
 };
 
-export const unsetUser = (data) => {
+export const unsetUser = () => {
   return {
     type: "UNSET_USER",
-    payload: data,
   };
 };
 
