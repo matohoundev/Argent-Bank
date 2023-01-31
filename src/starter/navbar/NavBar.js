@@ -6,22 +6,25 @@ import { signOut } from "../../redux/actions/authActions";
 import logo from "../../assets/logo/argentBankLogo.png";
 import { setUser, unsetUser } from "../../redux/actions/profileActions";
 import ApiServices from "../../services/ApiServices";
+import { profileSelector } from "../../redux/selector/profileSelector";
 
 const api = new ApiServices();
 
 const NavBar = () => {
   const token = localStorage.getItem("token");
-  const profile = useSelector((state) => state.profile);
+  const profile = useSelector(profileSelector);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getProfile = async () => {
-      const data = await api.getProfileData();
-      dispatch(setUser(data.body));
+      if (token) {
+        const data = await api.getProfileData();
+        dispatch(setUser(data.body));
+      }
     };
     getProfile();
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   const logout = () => {
     dispatch(signOut());
